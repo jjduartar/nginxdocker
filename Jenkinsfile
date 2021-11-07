@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('DockerNGINX') {
       steps {
-        sh 'sudo yum update -y'
+        sh 'yum update -y'
       }
     }
 
