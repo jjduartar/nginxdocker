@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('DockerNGINX') {
       steps {
-        sh 'chmod +x ${WORKSPACE}'
+        sh '''chmod +x ${WORKSPACE}
+./main.sh'''
       }
     }
 
