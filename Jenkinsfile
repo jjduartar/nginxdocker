@@ -8,8 +8,19 @@ pipeline {
   }
   stages {
     stage('Docker') {
-      steps {
-        echo 'My Docker'
+      parallel {
+        stage('Docker') {
+          steps {
+            echo 'My Docker'
+          }
+        }
+
+        stage('Build') {
+          steps {
+            sh 'npm install'
+          }
+        }
+
       }
     }
 
