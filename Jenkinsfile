@@ -2,6 +2,7 @@ pipeline {
   agent {
     docker {
       image 'ubuntu'
+      args 'apt-get update && apt-get install'
     }
 
   }
