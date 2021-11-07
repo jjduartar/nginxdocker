@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('DockerNGINX') {
       steps {
-        sh 'apt-get update -y'
+        sh 'sudo apt-get update -y'
       }
     }
 
