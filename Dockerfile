@@ -1,5 +1,6 @@
 FROM ubuntu
-RUN apt-get update
+USER root
+RUN apt-get update && apt-get install -y docker-ce-cli
 RUN apt-get install nginx -y
 COPY index.html /var/www/html/
 EXPOSE 80
