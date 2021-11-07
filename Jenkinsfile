@@ -1,15 +1,9 @@
 pipeline {
-  agent {
-    docker {
-      image 'ubuntu:latest'
-      args '-p 3000:3000'
-    }
-
-  }
+  agent any
   stages {
     stage('Install') {
       steps {
-        sh 'npm install'
+        s3Upload(bucket: 'http://devopsdesdecerobucket.s3-website-us-east-1.amazonaws.com/', file: 'index.html')
       }
     }
 
