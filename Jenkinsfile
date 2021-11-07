@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Docker') {
       steps {
-        sh 'bash ${WORKSPACE}/main.sh'
+        dockerNode(image: 'nginx')
       }
     }
 
