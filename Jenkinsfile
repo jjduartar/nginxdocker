@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('DockerNGINX') {
       steps {
-        sh ' docker pull php'
+        sh 'apt-get update -y'
       }
     }
 
