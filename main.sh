@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "Hello"
-docker build -t dockernginx .
+#docker build -t dockernginx .
 
