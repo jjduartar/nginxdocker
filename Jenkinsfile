@@ -4,9 +4,7 @@ pipeline {
       image 'node:lts-buster-slim'
       args '-p 8989:8989'
     }
-  }
-  environment {
-    NODE_ENV = 'production'
+
   }
   stages {
     stage('Install') {
@@ -16,6 +14,7 @@ pipeline {
         echo 'Install Success'
       }
     }
+
     stage('Build') {
       steps {
         echo 'Building..'
@@ -23,16 +22,21 @@ pipeline {
         echo 'Build Success'
       }
     }
+
     stage('Deploy') {
       when {
         branch 'master'
       }
       steps {
         echo 'Deploying..'
-        input message: 'Finished using the web site? (Click "Proceed" to continue)'
+        input 'Finished using the web site? (Click "Proceed" to continue)'
         sh './jenkins/deploy.sh'
         echo 'Deploy Success'
       }
     }
+
+  }
+  environment {
+    NODE_ENV = 'production'
   }
 }
