@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('Docker') {
       steps {
-        sh '''bash ${WORKSPACE}/main.sh
-echo "Successfull.."'''
+        sh 'bash ${WORKSPACE}/main.sh'
       }
     }
 
