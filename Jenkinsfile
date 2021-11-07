@@ -6,7 +6,7 @@ pipeline {
 
   }
   stages {
-    stage('') {
+    stage('Docker') {
       steps {
         sh 'bash ${WORKSPACE}\\main.sh'
       }
