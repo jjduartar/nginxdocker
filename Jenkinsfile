@@ -1,8 +1,8 @@
 pipeline {
   agent {
     docker {
-      args '-p 5000:80 dockernginx:latest'
       image 'dockernginx:latest'
+      args '-p 5000:80 dockernginx:latest  -v $(which docker):/usr/bin/docker'
     }
 
   }
