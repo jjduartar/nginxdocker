@@ -6,9 +6,9 @@ pipeline {
 
   }
   stages {
-    stage('Docker') {
+    stage('') {
       steps {
-        dockerNode(image: 'nginx')
+        sh 'bash ${WORKSPACE}\\main.sh'
       }
     }
 
